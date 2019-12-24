@@ -47,10 +47,10 @@
   editor = "/usr/bin/nvim"
 
 [commit]
-  template = ~/src/dotfiles/git/commit_template
+  template =    ~/src/dotfiles/git/commit_template
 
 [init]
-  templatedir = ~/src/dotfiles/git/commit_template
+  templatedir = ~/src/dotfiles/git
   
 [ghq]
   root = ~/src

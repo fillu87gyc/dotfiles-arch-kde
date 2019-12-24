@@ -1,5 +1,4 @@
 alias vi='nvim'
-alias open='thunar'
 
 status --is-interactive; and source (rbenv init -|psub)
 
