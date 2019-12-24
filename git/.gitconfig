@@ -1,0 +1,62 @@
+[user]
+  name  = fillu87gyc
+  email = s1500604@sendai.kosen-ac.jp
+
+[alias]
+  st      = status
+  s       = status
+  cho     = checkout
+  chob    = checkout -b
+  b       = branch
+  p       = push
+  c       = commit
+  alls    = config --get-regexp alias.*
+  shp     = stash pop
+  sth     = stash save
+  today   = log --oneline --since='15 hour ago'
+  last    = log -1 HEAD
+  d       = diff HEAD
+  d1      = diff HEAD~
+  d2      = diff HEAD~2
+  d3      = diff HEAD~3
+  grh     = !"git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(bold white)%s%C(reset)  %C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative --color|less -r -R "
+  mg      = merge
+  ff      = merge --ff
+  db      = !git branch | grep -v 'master' | xargs git branch -d 2> /dev/null
+  pin     = push -u origin
+  rename  = commit --amend
+  ref     = reflog
+  delo    = push --delete origin
+  rget    = remote prune origin
+  lg      = log
+  l       = log
+  rereset = reset --hard HEAD@{1}
+  delcm   = reset --soft HEAD^
+  a       = add .
+[push]
+  default = simple
+
+[filter "lfs"]
+  process = git-lfs filter-process
+  required = true
+  clean   = git-lfs clean -- %f
+  smudge  = git-lfs smudge -- %f
+
+[core]
+  autoCRLF = false
+  editor = "/usr/bin/nvim"
+
+[commit]
+  template = ~/src/dotfiles/git/commit_template
+
+[init]
+  templatedir = ~/src/dotfiles/git/commit_template
+  
+[ghq]
+  root = ~/src
+
+[merge]
+  ff = false
+
+[pull]
+  ff = only

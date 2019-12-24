@@ -1,0 +1,193 @@
+[[plugins]]
+repo='itchyny/lightline.vim'
+depends = 'coc.nvim'
+hook_add='''
+  hi WildMenu ctermbg=2 guifg=BLACK guibg=#50fa7b gui=none
+  hi CursorLineNr ctermbg=2 ctermfg=0 guifg=#50fa7b gui=none
+  hi VertSplit ctermfg=237 ctermbg=237 cterm=bold guifg=#3a3a3a guibg=#3a3a3a gui=bold
+  let s:black          = [ '#1c1c1c', 234 ]
+  let s:dark_gray      = [ '#262626', 235 ]
+  let s:gray           = [ '#3a3a3a', 237 ]
+  let s:light_gray     = [ '#4e4e4e', 239 ]
+  let s:white          = [ '#dadada', 253 ]
+  let s:dark_blue_gray = [ '#6272a4', 60  ]
+  let s:purple         = [ '#bd93f9', 141 ]
+  let s:pink           = [ '#ff79c6', 212 ]
+  let s:yellow         = [ '#f1fa8c', 11 ]
+  let s:orange         = [ '#ffb86c', 172 ]
+  let s:red            = [ '#AA0000', 9 ]
+  let s:blue           = [ '#AA0000', 4 ]
+
+  let s:normal00       = [ '#000000', 19 ]
+  let s:normal01       = [ '#000000', 21 ]
+  let s:normal02       = [ '#000000', 54 ]
+  let s:insert00       = [ '#000000', 231 ]
+  let s:insert01       = [ '#000000', 20 ]
+  let s:insert02       = [ '#000000', 21 ]
+  let s:insert03       = [ '#000000', 13 ]
+  let s:insert00fg     = [ '#000000', 20 ]
+  let s:insert01fg     = [ '#000000', 15 ]
+  let s:insert02fg     = [ '#000000', 15 ]
+  let s:insert03fg     = [ '#000000', 0 ]
+
+  let s:rightinsert00       = [ '#000000', 231 ]
+  let s:rightinsert01       = [ '#000000', 231 ]
+  let s:rightinsert02       = [ '#000000', 57 ]
+  let s:rightinsert00fg     = [ '#000000', 232 ]
+  let s:rightinsert01fg     = [ '#000000', 232 ]
+  let s:rightinsert02fg     = [ '#000000', 0 ]
+ 
+  let s:base00         = [ '#000000', 237 ]
+  let s:base01         = [ '#000000', 234 ]
+  let s:insert_middle  = [ '#000000', 57 ]
+  
+  let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
+  let s:p.normal.left     = [ [ s:white, s:normal00], [s:white, s:normal01],[s:white, s:normal02], [s:white, s:gray ] ]
+  let s:p.normal.right    = [ [ s:white, s:dark_blue_gray], [s:white, s:gray ] ]
+  let s:p.inactive.left   = [ [ s:white, s:gray], [s:white, s:gray ] ]
+  let s:p.inactive.right  = [ [ s:white, s:gray], [s:white, s:gray ] ]
+  let s:p.insert.left     = [ [ s:insert00fg, s:insert00 , 'bold'], [ s:insert01fg , s:insert01 ], [ s:insert02fg, s:insert02 ], [ s:insert03fg, s:insert03 ], [ s:white, s:base00 ], [ s:white, s:base01 ]]
+  let s:p.insert.right    = [ [ s:rightinsert00fg, s:rightinsert00 , 'bold'], [ s:rightinsert01fg , s:rightinsert01, 'bold' ], [ s:rightinsert02fg, s:rightinsert02 ] ]
+  let s:p.replace.left    = [ [ s:black, s:yellow], [s:yellow, s:gray ] ]
+  let s:p.replace.right   = [ [ s:black, s:yellow], [s:yellow, s:gray ] ]
+  let s:p.visual.left     = [ [ s:black, s:pink], [s:pink, s:gray ] ]
+  let s:p.visual.right    = [ [ s:black, s:pink], [s:pink, s:gray ] ]
+  let s:p.normal.middle   = [ [ s:white, s:dark_gray ] ]
+  let s:p.inactive.middle = [ [ s:white, s:dark_gray ] ]
+  let s:p.insert.middle   = [ [ s:white, s:insert_middle ] ]
+  let s:p.tabline.left    = [ [ s:white, s:light_gray ] ]
+  let s:p.tabline.tabsel  = [ [ s:white, s:dark_blue_gray ] ]
+  let s:p.tabline.middle  = [ [ s:white, s:gray ] ]
+  let s:p.tabline.right   = [ [ s:white, s:dark_gray ] ]
+  let s:p.normal.error    = [ [ s:black, s:red ] ]
+  let s:p.normal.warning  = [ [ s:black, s:orange ] ]
+  let g:lightline#colorscheme#dracula#palette = lightline#colorscheme#flatten(s:p)
+  let coloName = 'dracula'
+  let s:branch_glyph = "\ue0a0"
+
+  function! Modified()
+    return &buftype ==# 'terminal' ? '' :
+          \ &filetype =~# 'help\|vimfiler\|gundo\|fzf\|tagbar\|denite' ? '' :
+          \ &modified ? s:mo_glyph : &modifiable ? '' :
+          \ '-'
+  endfunction
+
+  function! Fugitive() 
+    if &buftype ==# 'terminal' || &filetype =~# 'denite' || winwidth(0) < 100
+      return ''
+    endif
+    try
+      if &filetype !~? 'vimfiler\|gundo\|tagbar' && exists('*fugitive#head')
+        let head = fugitive#head()
+        if head !=? ''
+          let head = s:branch_glyph . ' ' . head
+        endif
+        return head
+      endif
+    catch
+    endtry
+    return ''
+  endfunction
+
+  function! Fileformat() 
+    return &buftype ==# 'terminal' || &filetype =~# 'denite\|tagbar' ? '' :
+          \ winwidth(0) > 120 ? &fileformat . (exists('*WebDevIconsGetFileFormatSymbol') ? ' ' . WebDevIconsGetFileFormatSymbol() : '') : ''
+  endfunction
+
+  function! Filetype() 
+    return &buftype ==# 'terminal' || &filetype =~# 'denite\|tagbar' ? '' :
+          \ winwidth(0) > 120 ? (strlen(&filetype) ? &filetype . (exists('*WebDevIconsGetFileTypeSymbol') ? ' ' . WebDevIconsGetFileTypeSymbol() : '') : 'no ft') : ''
+  endfunction
+
+  function! Fileencoding() 
+    return &buftype ==# 'terminal' || &filetype =~# 'denite\|tagbar' ? '' :
+          \ winwidth(0) > 120 ? (strlen(&fileencoding) ? &fileencoding : &encoding) : ''
+  endfunction
+
+  function! Tagbar_status(current, sort, fname, ...) 
+    let g:lightline.fname = a:fname
+    return lightline#statusline(0)
+  endfunction
+
+  function! Filename() 
+  return (&buftype ==# 'terminal' ? has('nvim') ? b:term_title . ' (' . b:terminal_job_pid . ')' : '' :
+        \ &filetype ==# 'vimfiler' ? vimfiler#get_status_string() :
+        \ &filetype ==# 'unite' ? unite#get_status_string() :
+        \ &filetype ==# 'denite' ? denite#get_status('sources') :
+        \ &filetype ==# 'denite-filter' ? '' :
+        \ &filetype ==# 'fzf' ? get(g:lightline, 'fname', '') :
+        \ &filetype ==# 'tagbar' ? get(g:lightline, 'fname', '') :
+        \ '' !=# expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' !=# Modified() ? ' ' . Modified() : '')
+  endfunction
+  let g:coc_status_error_sign = '  '
+  let g:coc_status_warning_sign = '  '
+
+  function! LightLineCocError()
+    let error_sign = get(g:, 'coc_status_error_sign' )
+    let info = get(b:, 'coc_diagnostic_info', {})
+    if empty(info)
+      return ''
+    endif
+    let errmsgs = []
+    if get(info, 'error', 0)
+      call add(errmsgs, error_sign . info['error'])
+    endif
+    return trim(join(errmsgs, ' ') . ' ' . get(g:, 'coc_status', ''))
+  endfunction
+
+  function! LightLineCocWarn() abort
+    let warning_sign = get(g:, 'coc_status_warning_sign')
+    let info = get(b:, 'coc_diagnostic_info', {})
+    if empty(info)
+      return ''
+    endif
+    let warnmsgs = []
+    if get(info, 'warning', 0)
+      call add(warnmsgs, warning_sign . info['warning'])
+    endif
+    return trim(join(warnmsgs, ' ') . ' ' . get(g:, 'coc_status', ''))
+  endfunction
+
+  autocmd User CocDiagnosticChange call lightline#update()  
+
+  let g:lightline = { 
+  \  'colorscheme': coloName,
+  \  'active': {
+  \    'left': [ 
+  \       [ 'mode', 'paste' ], 
+  \       [ 'fugitive', 'readonly' ],
+  \       [ 'relativepath' ],
+  \       [ 'modified' ] 
+  \     ],
+  \     'right': [
+  \       [ 'lineinfo' ],
+  \       [ 'percent' ],
+  \       [ 'coc_error', 'coc_warning' ],
+  \       [ 'fileformat', 'fileencoding', 'filetype' ]
+  \   ]
+  \  },
+  \  'component_function': {
+  \    'fugitive':     'Fugitive',
+  \    'fileformat':   'Fileformat',
+  \    'filetype':     'Filetype',
+  \    'fileencoding': 'Fileencoding',
+  \  },
+  \  'component': {
+  \    'filename': '%t',
+  \    'readonly': '%R',
+  \    'modified': '%M',
+  \    'relativepath': '%f',
+  \    'percent': ' %3p%%',
+  \    'lineinfo': '並%3l:%-2v'
+  \  },
+  \  'component_expand': {
+  \  'coc_error'        : 'LightLineCocError',
+  \  'coc_warning'      : 'LightLineCocWarn'
+  \  },
+  \  'component_type': {
+  \   'coc_error'        : 'error',
+  \   'coc_warning'      : 'warning'
+  \  }
+  \}
+'''

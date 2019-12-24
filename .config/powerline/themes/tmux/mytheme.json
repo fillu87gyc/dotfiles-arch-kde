@@ -1,0 +1,51 @@
+{
+    "segments": {
+        "right": [
+            {
+                "function": "powerline.segments.common.sys.cpu_load_percent",
+                "before": "CPU:",
+                "priority": 50
+            },
+            {
+                "function": "powerline.segments.common.net.internal_ip",
+                "args": {
+                    "interface": "wlp3s0",
+                    "ipv": 4
+                },
+                "draw_hard_divider": true,
+                "draw_soft_divider": true
+            },
+            { 
+                "function":"powerline.segments.common.sys.system_load",
+                "draw_hard_divider": true,
+                "draw_soft_divider": true              
+            },
+            {
+                "function": "powerline.segments.common.bat.battery",
+                "args": {
+                    "gamify": false,
+                    "full_heart": "♥",
+                    "empty_heart": "♥",
+                    "online": "",
+                    "offline": ""
+                },
+                "draw_hard_divider": true,
+                "draw_soft_divider": true
+            },
+            {
+                "function": "powerline.segments.common.time.date",
+                "draw_hard_divider": true,
+                "draw_soft_divider": true
+            },
+            {
+                "function": "powerline.segments.common.time.date",
+                "args": {
+                    "format": " %H:%M",
+                    "istime": true
+                },
+                "draw_hard_divider": false,
+                "draw_soft_divider": false
+            }
+        ]
+    }
+}

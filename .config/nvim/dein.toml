@@ -1,0 +1,116 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo= 'Lokaltog/vim-easymotion'
+hook_add='''
+  let g:EasyMotion_do_mapping = 0
+  let g:EasyMotion_smartcase = 1
+
+  " <Leader>f{char} to move to {char}
+  nmap  <Leader>s <Plug>(easymotion-bd-f)
+  vmap  <Leader>s <Plug>(easymotion-bd-f)
+
+  " s{char}{char} to move to {char}{char}
+  nmap <Leader><Leader>s <Plug>(easymotion-bd-f2)
+  vmap <Leader><Leader>s <Plug>(easymotion-bd-f2)
+
+  " Move to line
+  nmap <Leader>j <Plug>(easymotion-bd-jk)
+  vmap <Leader>j <Plug>(easymotion-bd-jk)
+  nmap <Leader>k <Plug>(easymotion-bd-jk)
+  vmap <Leader>k <Plug>(easymotion-bd-jk)
+'''
+
+# 括弧の対応関係を表示
+[[plugins]]
+repo='itchyny/vim-parenmatch'
+hook_add='''
+  let g:loaded_matchparen = 1
+'''
+
+[[plugins]]
+repo='tyru/caw.vim'
+hook_add='''
+  nmap <Leader>c  <Plug>(caw:hatpos:toggle)
+  vmap <Leader>c  <Plug>(caw:hatpos:toggle)
+  nmap <Leader>C  <Plug>(caw:hatpos:comment)
+  nmap <Leader>U  <Plug>(caw:hatpos:uncomment)
+  vmap <Leader>C  <Plug>(caw:hatpos:comment)
+  vmap <Leader>U  <Plug>(caw:hatpos:uncomment)
+'''
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
+[[plugins]]
+repo='yonchu/accelerated-smooth-scroll'
+
+[[plugins]]
+repo='tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --bin'
+merged = '0'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = '''
+  let g:fzf_layout = { 'up': '~60%' }
+  
+  let g:fzf_action = {
+  \ 'Enter' : 'tab split',
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+  nnoremap ;f :Files!<CR>
+  nnoremap ;t :Files!<CR>
+  command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+  nnoremap ;s :GFiles?<CR>
+
+  nnoremap ;g :Rg<CR>
+  command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --hidden '.shellescape(<q-args>), 1,
+  \    fzf#vim#with_preview(), <bang>0)
+'''
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+set updatetime=200
+highlight GitGutterAdd ctermfg=black ctermbg=lightyellow
+highlight GitGutterChange ctermfg=black ctermbg=green
+highlight GitGutterDelete ctermfg=black ctermbg=red
+highlight GitGutterChangeDelete ctermfg=white ctermbg=darkred
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '*'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^^'
+let g:gitgutter_sign_modified_removed = '=='
+'''
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  nnoremap <silent> <Leader>i :IndentGuidesToggle<CR>
+  let g:indent_guides_enable_on_vim_startup = 1
+  let g:indent_guides_auto_colors = 0
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgray   ctermbg=235
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=233
+'''
+
