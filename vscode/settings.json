@@ -1,276 +1,277 @@
 {
-  "editor.rulers": [
-    80,
-    100
-  ],
-  "editor.formatOnPaste": true,
-  "editor.formatOnType": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnSaveTimeout": 1000,
-  "window.zoomLevel": 1,
-  "files.associations": {
-    "*.html": "html",
-    "*.erb": "erb",
-    ".vsvimrc": "viml"
-  },
-  "vim.insertModeKeyBindings": [
-    {
-      "before": [
-        "j",
-        "j"
-      ],
-      "after": [
-        "<Esc>"
-      ]
-    }
-  ],
-  "vim.leader": "<space>",
-  "vim.normalModeKeyBindings": [
-    {
-      "before": [
-        "leader",
-        "l"
-      ],
-      "after": [
-        "$"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "h"
-      ],
-      "after": [
-        "^"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "j"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "j"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "s"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "s"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "k"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "k"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "y"
-      ],
-      "after": [
-        "b",
-        "v",
-        "e",
-        "y",
-        "<ESC>",
-        "$"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "v"
-      ],
-      "after": [
-        "b",
-        "v",
-        "e"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "w"
-      ],
-      "commands": [
-        {
-          "command": "workbench.action.files.saveAll",
-          "args": []
-        }
-      ]
-    },
-    {
-      "before": [
-        "s"
-      ],
-      "after": [
-        "<leader>",
-        "<leader>",
-        "s"
-      ]
-    }
-  ],
-  "vim.visualModeKeyBindings": [
-    {
-      "before": [
-        "leader",
-        "l"
-      ],
-      "after": [
-        "$"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "h"
-      ],
-      "after": [
-        "^"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "e"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "e"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "j"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "j"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "s"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "s"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "k"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "k"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "y"
-      ],
-      "after": [
-        "b",
-        "v",
-        "e",
-        "y",
-        "<ESC>",
-        "$"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "v"
-      ],
-      "after": [
-        "b",
-        "v",
-        "e"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "<leader>",
-        "v"
-      ],
-      "after": [
-        "^",
-        "v",
-        "$"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "w"
-      ],
-      "commands": [
-        {
-          "command": "workbench.action.files.saveAll",
-          "args": []
-        }
-      ]
-    }
-  ],
-  "vim.overrideCopy": false,
-  "vim.useSystemClipboard": true,
-  "vim.easymotion": true,
-  "vim.easymotionKeys": "qazwsxedcrfvtgbyhnujmikol",
-  "git.ignoreMissingGitWarning": true,
-  "workbench.iconTheme": "vscode-icons",
-  "editor.minimap.enabled": false,
-  "editor.quickSuggestions": {
-    "other": true,
-    "comments": true,
-    "strings": true
-  },
-  "editor.detectIndentation": false,
-  "editor.insertSpaces": false,
-  "editor.renderWhitespace": "all",
-  "[ruby]": {
-    "editor.autoIndent": true,
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  },
-  "[erb]": {
-    "editor.autoIndent": true,
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  },
-  "git.autofetch": true,
-  "markdownlint.config": {
-    "MD009": {
-      "br_spaces": 2
-    }
-  },
-  "workbench.colorTheme": "Default High Contrast",
-  "editor.renderIndentGuides": false,
-  "editor.fontSize": 16,
-  "editor.fontFamily": "'Ricty'"
+	"editor.rulers": [
+		80,
+		100
+	],
+	"editor.formatOnPaste": true,
+	"editor.formatOnType": true,
+	"editor.formatOnSave": true,
+	"editor.formatOnSaveTimeout": 1000,
+	"window.zoomLevel": 1,
+	"files.associations": {
+		"*.html": "html",
+		"*.erb": "erb",
+		".vsvimrc": "viml"
+	},
+	"vim.insertModeKeyBindings": [
+		{
+			"before": [
+				"j",
+				"j"
+			],
+			"after": [
+				"<Esc>"
+			]
+		}
+	],
+	"vim.leader": "<space>",
+	"vim.normalModeKeyBindings": [
+		{
+			"before": [
+				"leader",
+				"l"
+			],
+			"after": [
+				"$"
+			]
+		},
+		{
+			"before": [
+				"leader",
+				"h"
+			],
+			"after": [
+				"^"
+			]
+		},
+		{
+			"before": [
+				"leader",
+				"j"
+			],
+			"after": [
+				"leader",
+				"leader",
+				"j"
+			]
+		},
+		{
+			"before": [
+				"leader",
+				"s"
+			],
+			"after": [
+				"leader",
+				"leader",
+				"s"
+			]
+		},
+		{
+			"before": [
+				"leader",
+				"k"
+			],
+			"after": [
+				"leader",
+				"leader",
+				"k"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"y"
+			],
+			"after": [
+				"b",
+				"v",
+				"e",
+				"y",
+				"<ESC>",
+				"$"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"v"
+			],
+			"after": [
+				"b",
+				"v",
+				"e"
+			]
+		},
+		{
+			"before": [
+				"leader",
+				"w"
+			],
+			"commands": [
+				{
+					"command": "workbench.action.files.saveAll",
+					"args": []
+				}
+			]
+		},
+		{
+			"before": [
+				"s"
+			],
+			"after": [
+				"<leader>",
+				"<leader>",
+				"s"
+			]
+		}
+	],
+	"vim.visualModeKeyBindings": [
+		{
+			"before": [
+				"leader",
+				"l"
+			],
+			"after": [
+				"$"
+			]
+		},
+		{
+			"before": [
+				"leader",
+				"h"
+			],
+			"after": [
+				"^"
+			]
+		},
+		{
+			"before": [
+				"leader",
+				"e"
+			],
+			"after": [
+				"leader",
+				"leader",
+				"e"
+			]
+		},
+		{
+			"before": [
+				"leader",
+				"j"
+			],
+			"after": [
+				"leader",
+				"leader",
+				"j"
+			]
+		},
+		{
+			"before": [
+				"leader",
+				"s"
+			],
+			"after": [
+				"leader",
+				"leader",
+				"s"
+			]
+		},
+		{
+			"before": [
+				"leader",
+				"k"
+			],
+			"after": [
+				"leader",
+				"leader",
+				"k"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"y"
+			],
+			"after": [
+				"b",
+				"v",
+				"e",
+				"y",
+				"<ESC>",
+				"$"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"v"
+			],
+			"after": [
+				"b",
+				"v",
+				"e"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"<leader>",
+				"v"
+			],
+			"after": [
+				"^",
+				"v",
+				"$"
+			]
+		},
+		{
+			"before": [
+				"leader",
+				"w"
+			],
+			"commands": [
+				{
+					"command": "workbench.action.files.saveAll",
+					"args": []
+				}
+			]
+		}
+	],
+	"vim.overrideCopy": false,
+	"vim.useSystemClipboard": true,
+	"vim.easymotion": true,
+	"vim.easymotionKeys": "qazwsxedcrfvtgbyhnujmikol",
+	"git.ignoreMissingGitWarning": true,
+	"workbench.iconTheme": "vscode-icons",
+	"editor.minimap.enabled": false,
+	"editor.quickSuggestions": {
+		"other": true,
+		"comments": true,
+		"strings": true
+	},
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.renderWhitespace": "all",
+	"[ruby]": {
+		"editor.autoIndent": true,
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true
+	},
+	"[erb]": {
+		"editor.autoIndent": true,
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true
+	},
+	"git.autofetch": true,
+	"markdownlint.config": {
+		"MD009": {
+			"br_spaces": 2
+		}
+	},
+	"workbench.colorTheme": "Default High Contrast",
+	"editor.renderIndentGuides": false,
+	"editor.fontSize": 16,
+	"editor.fontFamily": "'Ricty'",
+	"vsicons.dontShowNewVersionMessage": true
 }

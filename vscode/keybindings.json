@@ -1,0 +1,154 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[
+	{
+		"key": "ctrl+a",
+		"command": "-extension.vim_ctrl+a",
+		"when": "editorTextFocus && vim.active && vim.use<C-a> && !inDebugRepl"
+	},
+	{
+		"key": "ctrl+shift+l",
+		"command": "editor.action.moveCarretRightAction"
+	},
+	{
+		"key": "ctrl+shift+h",
+		"command": "editor.action.moveCarretLeftAction"
+	},
+	{
+		"key": "shift+alt+k",
+		"command": "editor.action.insertCursorAbove",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+up",
+		"command": "-editor.action.insertCursorAbove",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+alt+j",
+		"command": "editor.action.insertCursorBelow",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+f",
+		"command": "editor.action.format",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+down",
+		"command": "-editor.action.insertCursorBelow",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+k ctrl+d",
+		"command": "editor.action.formatDocument",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "shift+alt+f",
+		"command": "-editor.action.formatDocument",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+k ctrl+d",
+		"command": "-editor.action.moveSelectionToNextFindMatch",
+		"when": "editorFocus"
+	},
+	{
+		"key": "down",
+		"command": "-list.focusDown",
+		"when": "listFocus && !inputFocus"
+	},
+	{
+		"key": "ctrl+shift+k",
+		"command": "cursorUp",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "up",
+		"command": "-cursorUp",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+j",
+		"command": "cursorDown",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "down",
+		"command": "-cursorDown",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+f",
+		"command": "-workbench.action.findInFiles",
+		"when": "!editorFocus && !searchInputBoxFocus"
+	},
+	{
+		"key": "ctrl+shift+f",
+		"command": "-workbench.view.search",
+		"when": "!editorFocus && !searchViewletVisible"
+	},
+	{
+		"key": "ctrl+shift+f",
+		"command": "-workbench.action.findInFilesWithSelectedText",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+shift+f",
+		"command": "-search.action.focusActiveEditor",
+		"when": "searchInputBoxFocus && searchViewletVisible"
+	},
+	{
+		"key": "ctrl+f",
+		"command": "actions.find",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+x",
+		"command": "-extension.vim_ctrl+x",
+		"when": "editorTextFocus && vim.active && vim.use<C-x> && !inDebugRepl"
+	},
+	{
+		"key": "ctrl+shift+u",
+		"command": "workbench.action.terminal.toggleTerminal"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "workbench.action.previousEditor"
+	},
+	{
+		"key": "ctrl+pageup",
+		"command": "-workbench.action.previousEditor"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "workbench.action.nextEditor"
+	},
+	{
+		"key": "ctrl+pagedown",
+		"command": "-workbench.action.nextEditor"
+	},
+	{
+		"key": "ctrl+space",
+		"command": "-toggleSuggestionDetails",
+		"when": "editorTextFocus && suggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+space",
+		"command": "selectNextSuggestion",
+		"when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+shift+d",
+		"command": "-workbench.view.debug"
+	},
+	{
+		"key": "ctrl+shift+d",
+		"command": "extension.vim_ctrl+b",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+m",
+		"command": "-editor.action.toggleTabFocusMode"
+	}
+]
