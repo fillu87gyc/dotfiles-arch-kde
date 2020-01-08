@@ -9,7 +9,7 @@ set -g GTK_IM_MODULE ibus
 set -g XMODIFIERS @im=ibus
 set -g QT_IM_MODULE ibus
 
-set PATH /home/fill/go/bin $PATH
+set PATH /home/fill/go/bin /home/fill/flutter/bin /opt/dart-sdk $PATH
 
 function fish_right_prompt; end
 

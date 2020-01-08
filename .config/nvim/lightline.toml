@@ -72,45 +72,34 @@ hook_add='''
           \ '-'
   endfunction
 
-  function! Fugitive() 
-    if &buftype ==# 'terminal' || &filetype =~# 'denite' || winwidth(0) < 100
-      return ''
-    endif
-    try
-      if &filetype !~? 'vimfiler\|gundo\|tagbar' && exists('*fugitive#head')
-        let head = fugitive#head()
-        if head !=? ''
-          let head = s:branch_glyph . ' ' . head
-        endif
-        return head
-      endif
-    catch
-    endtry
-    return ''
+  function! GitBranch()
+    let branch = get(g:,'coc_git_status', '')
+    return winwidth(0) > 120 ? branch : ''
   endfunction
+
+  function! GitStatus() abort
+     let branch = get(b:,'coc_git_status', '')
+    return winwidth(0) > 120 ? branch : ''
+  endfunction
+
 
   function! Fileformat() 
     return &buftype ==# 'terminal' || &filetype =~# 'denite\|tagbar' ? '' :
-          \ winwidth(0) > 120 ? &fileformat . (exists('*WebDevIconsGetFileFormatSymbol') ? ' ' . WebDevIconsGetFileFormatSymbol() : '') : ''
+      \ winwidth(0) > 120 ? &fileformat . (exists('*WebDevIconsGetFileFormatSymbol') ? ' ' . WebDevIconsGetFileFormatSymbol() : '') : ''
   endfunction
 
   function! Filetype() 
     return &buftype ==# 'terminal' || &filetype =~# 'denite\|tagbar' ? '' :
-          \ winwidth(0) > 120 ? (strlen(&filetype) ? &filetype . (exists('*WebDevIconsGetFileTypeSymbol') ? ' ' . WebDevIconsGetFileTypeSymbol() : '') : 'no ft') : ''
+      \ winwidth(0) > 120 ? (strlen(&filetype) ? &filetype . (exists('*WebDevIconsGetFileTypeSymbol') ? ' ' . WebDevIconsGetFileTypeSymbol() : '') : 'no ft') : ''
   endfunction
 
   function! Fileencoding() 
     return &buftype ==# 'terminal' || &filetype =~# 'denite\|tagbar' ? '' :
-          \ winwidth(0) > 120 ? (strlen(&fileencoding) ? &fileencoding : &encoding) : ''
-  endfunction
-
-  function! Tagbar_status(current, sort, fname, ...) 
-    let g:lightline.fname = a:fname
-    return lightline#statusline(0)
+      \ winwidth(0) > 120 ? (strlen(&fileencoding) ? &fileencoding : &encoding) : ''
   endfunction
 
   function! Filename() 
-  return (&buftype ==# 'terminal' ? has('nvim') ? b:term_title . ' (' . b:terminal_job_pid . ')' : '' :
+    return (&buftype ==# 'terminal' ? has('nvim') ? b:term_title . ' (' . b:terminal_job_pid . ')' : '' :
         \ &filetype ==# 'vimfiler' ? vimfiler#get_status_string() :
         \ &filetype ==# 'unite' ? unite#get_status_string() :
         \ &filetype ==# 'denite' ? denite#get_status('sources') :
@@ -120,6 +109,7 @@ hook_add='''
         \ '' !=# expand('%:t') ? expand('%:t') : '[No Name]') .
         \ ('' !=# Modified() ? ' ' . Modified() : '')
   endfunction
+
   let g:coc_status_error_sign = '  '
   let g:coc_status_warning_sign = '  '
 
@@ -156,29 +146,30 @@ hook_add='''
   \  'active': {
   \    'left': [ 
   \       [ 'mode', 'paste' ], 
-  \       [ 'fugitive', 'readonly' ],
-  \       [ 'relativepath' ],
+  \       [ 'gitbranch', 'readonly' ],
   \       [ 'modified' ] 
   \     ],
   \     'right': [
+  \       [ 'relativepath' ],
   \       [ 'lineinfo' ],
   \       [ 'percent' ],
   \       [ 'coc_error', 'coc_warning' ],
-  \       [ 'fileformat', 'fileencoding', 'filetype' ]
+  \       [ 'fileformat', 'fileencoding', 'filetype' ],
+  \       [ 'gitstatus' ]
   \   ]
   \  },
   \  'component_function': {
-  \    'fugitive':     'Fugitive',
+  \    'gitbranch':    'GitBranch',
   \    'fileformat':   'Fileformat',
   \    'filetype':     'Filetype',
   \    'fileencoding': 'Fileencoding',
+  \    'gitstatus':    'GitStatus'
   \  },
   \  'component': {
-  \    'filename': '%t',
-  \    'readonly': '%R',
+  \    'readonly': ' %R',
   \    'modified': '%M',
   \    'relativepath': '%f',
-  \    'percent': ' %3p%%',
+  \    'percent': '%3p%%',
   \    'lineinfo': '並%3l:%-2v'
   \  },
   \  'component_expand': {
@@ -188,6 +179,9 @@ hook_add='''
   \  'component_type': {
   \   'coc_error'        : 'error',
   \   'coc_warning'      : 'warning'
-  \  }
+  \  },
+  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+  \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
   \}
+
 '''

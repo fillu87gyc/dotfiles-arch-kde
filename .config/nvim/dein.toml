@@ -47,9 +47,6 @@ repo = 'Shougo/vimproc.vim'
 repo='yonchu/accelerated-smooth-scroll'
 
 [[plugins]]
-repo='tpope/vim-fugitive'
-
-[[plugins]]
 repo = 'junegunn/fzf'
 build = './install --bin'
 merged = '0'
@@ -81,28 +78,10 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'airblade/vim-gitgutter'
-hook_add = '''
-set updatetime=200
-highlight GitGutterAdd ctermfg=black ctermbg=lightyellow
-highlight GitGutterChange ctermfg=black ctermbg=green
-highlight GitGutterDelete ctermfg=black ctermbg=red
-highlight GitGutterChangeDelete ctermfg=white ctermbg=darkred
-let g:gitgutter_sign_added = '+'
-let g:gitgutter_sign_modified = '*'
-let g:gitgutter_sign_removed = '-'
-let g:gitgutter_sign_removed_first_line = '^^'
-let g:gitgutter_sign_modified_removed = '=='
-'''
-
-[[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
-
-[[plugins]]
-repo = 'majutsushi/tagbar'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'

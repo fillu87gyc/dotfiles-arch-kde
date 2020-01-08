@@ -7,6 +7,7 @@ set smarttab
 set autoindent
 set nowrap             "長い行を折り返さない
 set clipboard+=unnamed  "yank した文字列をクリップボードにコピー
+set clipboard+=unnamedplus
 set hls                "検索した文字をハイライトする
 set smartcase
 set incsearch

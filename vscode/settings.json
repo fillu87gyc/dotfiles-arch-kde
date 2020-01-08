@@ -11,7 +11,8 @@
 	"files.associations": {
 		"*.html": "html",
 		"*.erb": "erb",
-		".vsvimrc": "viml"
+		".vsvimrc": "viml",
+		"新年": "markdown"
 	},
 	"vim.insertModeKeyBindings": [
 		{
@@ -272,6 +273,8 @@
 	"workbench.colorTheme": "Default High Contrast",
 	"editor.renderIndentGuides": false,
 	"editor.fontSize": 16,
-	"editor.fontFamily": "'Ricty'",
-	"vsicons.dontShowNewVersionMessage": true
+	"vsicons.dontShowNewVersionMessage": true,
+	"terminal.external.windowsExec": "",
+	"terminal.integrated.fontFamily": "'InconsolataGo Nerd Font'",
+	"editor.fontFamily": "'InconsolataGo Nerd Font'"
 }
