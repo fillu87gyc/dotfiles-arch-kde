@@ -14,10 +14,10 @@ let s:orange         = [ '#ffb86c', 172 ]
 let s:red            = [ '#AA0000', 9 ]
 let s:blue           = [ '#AA0000', 4 ]
 
-let s:normal_0       = [ '#000000', 19 ]
-let s:normal_1       = [ '#000000', 21 ]
-let s:normal_2       = [ '#000000', 54 ]
-let s:normal_3       = [ '#000000', 54 ]
+let s:normal_0       = [ '#000000', 27 ]
+let s:normal_1       = [ '#000000', 24 ]
+let s:normal_2       = [ '#000000', 23 ]
+let s:normal_3       = [ '#000000', 59 ]
 
 let s:normal_0_fg       = [ '#000000', 255 ]
 let s:normal_1_fg       = [ '#000000', 255 ]
@@ -26,65 +26,61 @@ let s:normal_3_fg       = [ '#000000', 255 ]
 
 let s:normal_right_0  = [ '#000000', 15 ]
 let s:normal_right_1  = [ '#000000', 245 ]
-let s:normal_right_2  = [ '#000000', 240 ]
-let s:normal_right_3  = [ '#000000', 240 ]
+let s:normal_right_2  = [ '#000000', 238 ]
+let s:normal_right_3  = [ '#000000', 236 ]
 
 let s:normal_right_0_fg  = [ '#000000', 0 ]
 let s:normal_right_1_fg  = [ '#000000', 0 ]
 let s:normal_right_2_fg  = [ '#000000', 255 ]
 let s:normal_right_3_fg  = [ '#000000', 255 ]
 
-let s:insert_0       = [ '#000000', 231 ]
-let s:insert_1       = [ '#000000', 20 ]
+let s:insert_0       = [ '#000000', 255 ]
+let s:insert_1       = [ '#000000', 17 ]
 let s:insert_2       = [ '#000000', 21 ]
-let s:insert_3       = [ '#000000', 13 ]
+let s:insert_3       = [ '#000000', 27 ]
 
-let s:insert_0_fg     = [ '#000000', 20 ]
-let s:insert_1_fg     = [ '#000000', 15 ]
-let s:insert_2_fg     = [ '#000000', 15 ]
-let s:insert_3_fg     = [ '#000000', 0 ]
+let s:insert_0_fg     = [ '#000000', 20  ]
+let s:insert_1_fg     = [ '#000000', 255 ]
+let s:insert_2_fg     = [ '#000000', 255 ]
+let s:insert_3_fg     = [ '#000000', 255 ]
 
-let s:insert_right_0       = [ '#000000', 231 ]
-let s:insert_right_1       = [ '#000000', 231 ]
-let s:insert_right_2       = [ '#000000', 57 ]
-let s:insert_right_3       = [ '#000000', 57 ]
+let s:insert_right_0       = [ '#000000', 7 ]
+let s:insert_right_1       = [ '#000000', 14 ]
+let s:insert_right_2       = [ '#000000', 25 ]
+let s:insert_right_3       = [ '#000000', 7 ]
 
-let s:insert_right_0_fg     = [ '#000000', 232 ]
-let s:insert_right_1_fg     = [ '#000000', 232 ]
-let s:insert_right_2_fg     = [ '#000000', 0 ]
-let s:insert_right_3_fg     = [ '#000000', 0 ]
+let s:insert_right_0_fg     = [ '#000000', 0 ]
+let s:insert_right_1_fg     = [ '#000000', 0 ]
+let s:insert_right_2_fg     = [ '#000000', 255 ]
+let s:insert_right_3_fg     = [ '#000000', 255 ]
 
-let s:insert_middle  = [ '#000000', 57 ]
+let s:insert_middle  = [ '#000000', 24 ]
 
 let s:base00         = [ '#000000', 237 ]
 let s:base01         = [ '#000000', 234 ]
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 let s:p.normal.left = [
-      \[s:normal_0_fg, s:normal_0],
+      \[s:normal_0_fg, s:normal_0, "bold"],
       \[s:normal_1_fg, s:normal_1],
       \[s:normal_2_fg, s:normal_2],
-      \[s:normal_3_fg, s:normal_3]
-      \]
+      \[s:normal_3_fg, s:normal_3]]
 let s:p.normal.right = [
       \[s:normal_right_0_fg, s:normal_right_0],
       \[s:normal_right_1_fg, s:normal_right_1],
       \[s:normal_right_2_fg, s:normal_right_2],
-      \[s:normal_right_3_fg, s:normal_right_3]
-      \]
+      \[s:normal_right_3_fg, s:normal_right_3]]
 let s:p.normal.middle   = [ [ s:white, s:dark_gray ] ]
 let s:p.insert.left = [
-      \[s:insert_0_fg, s:insert_0],
+      \[s:insert_0_fg, s:insert_0, "bold"],
       \[s:insert_1_fg, s:insert_1],
       \[s:insert_2_fg, s:insert_2],
-      \[s:insert_3_fg, s:insert_3]
-      \]
+      \[s:insert_3_fg, s:insert_3]]
 let s:p.insert.right = [
       \[s:insert_right_0_fg, s:insert_right_0],
       \[s:insert_right_1_fg, s:insert_right_1],
       \[s:insert_right_2_fg, s:insert_right_2],
-      \[s:insert_right_3_fg, s:insert_right_3]
-      \]
+      \[s:insert_right_3_fg, s:insert_right_3]]
 let s:p.insert.middle   = [ [ s:white, s:insert_middle ] ]
 
 let s:p.inactive.left   = [ [ s:white, s:gray], [s:white, s:gray ] ]
@@ -119,7 +115,7 @@ endfunction
 
 function! GitStatus()
   let st = get(b:,'coc_git_status', '')
-  return winwidth(0) > 120 ? st : ''
+  return winwidth(0) > 120 ? ' '.st : ''
 endfunction
 
 function! Fileformat() 
@@ -174,15 +170,15 @@ let g:lightline = {
       \    'left': [ 
       \       [ 'mode', 'paste' ], 
       \       [ 'gitbranch', 'readonly' ],
-      \       [ 'modified' ] 
+      \       [ 'gitstatus' ],
+      \       [ 'filename' ],
+      \       [ 'modified' ]
       \     ],
       \     'right': [
-      \       [ 'filename' ],
       \       [ 'lineinfo' ],
       \       [ 'percent' ],
-      \       [ 'gitstatus' ],
-      \       [ 'coc_error', 'coc_warning' ],
-      \       [ 'fileformat', 'fileencoding', 'filetype' ]
+      \       [ 'fileformat', 'fileencoding', 'filetype' ],
+      \       [ 'coc_error', 'coc_warning' ]
       \   ]
       \  },
       \  'component_function': {
@@ -194,7 +190,7 @@ let g:lightline = {
       \  },
       \  'component': {
       \    'readonly': ' %R',
-      \    'modified': '%M',
+      \    'modified': '%m',
       \    'filename': ' %t',
       \    'percent': '%3p%%',
       \    'lineinfo': '並%3l:%-2v'
