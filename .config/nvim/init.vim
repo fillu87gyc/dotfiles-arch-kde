@@ -60,5 +60,5 @@ augroup vimrcEx
   \ exe "normal g`\"" | endif
 augroup END
 
-source dein_config.vim 
-source SyntaxInfo.vim
+source ~/src/dotfiles/.config/nvim/.vim/dein_config.vim
+source ~/src/dotfiles/.config/nvim/.vim/SyntaxInfo.vim

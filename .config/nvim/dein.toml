@@ -93,3 +93,7 @@ hook_add = '''
   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=233
 '''
 
+[[plugins]]
+repo='itchyny/lightline.vim'
+depends = 'coc.nvim'
+hook_add='source ~/src/dotfiles/.config/nvim/.vim/lightline.vim'
