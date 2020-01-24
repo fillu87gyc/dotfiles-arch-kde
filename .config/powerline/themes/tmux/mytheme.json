@@ -21,10 +21,7 @@
         "function": "powerline.segments.common.bat.battery",
         "args": {
           "gamify": false,
-          "full_heart": "♥",
-          "empty_heart": "♥",
-          "online": "",
-          "offline": ""
+          "format": "\u23fb {capacity:3.0%}"
         },
         "draw_hard_divider": true,
         "draw_soft_divider": true

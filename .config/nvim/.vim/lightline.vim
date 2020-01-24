@@ -35,8 +35,8 @@ let s:normal_right_2_fg  = [ '#000000', 255 ]
 let s:normal_right_3_fg  = [ '#000000', 255 ]
 
 let s:insert_0       = [ '#000000', 255 ]
-let s:insert_1       = [ '#000000', 17 ]
-let s:insert_2       = [ '#000000', 21 ]
+let s:insert_1       = [ '#000000', 21 ]
+let s:insert_2       = [ '#000000', 57 ]
 let s:insert_3       = [ '#000000', 27 ]
 
 let s:insert_0_fg     = [ '#000000', 20  ]

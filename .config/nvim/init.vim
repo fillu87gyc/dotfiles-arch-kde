@@ -12,7 +12,9 @@ set hls                "検索した文字をハイライトする
 set smartcase
 set incsearch
 set showtabline=2       " タブライン出していこうぜ
+set ambiwidth=single
 let mapleader = "\<Space>"
+
 noremap <Leader>r :source ~/.config/nvim/init.vim<CR>:noh<CR>:echo'reload!'<CR>
 
 "------
@@ -60,5 +62,5 @@ augroup vimrcEx
   \ exe "normal g`\"" | endif
 augroup END
 
-source ~/src/dotfiles/.config/nvim/.vim/dein_config.vim
-source ~/src/dotfiles/.config/nvim/.vim/SyntaxInfo.vim
+source /home/fill/src/dotfiles/.config/nvim/.vim/dein_config.vim
+source /home/fill/src/dotfiles/.config/nvim/.vim/SyntaxInfo.vim

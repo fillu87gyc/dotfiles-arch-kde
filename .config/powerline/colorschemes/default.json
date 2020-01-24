@@ -174,7 +174,7 @@
       "bg": "my:clrbox02",
       "attrs": []
     },
-    "battery_gradient": {"fg": "GREEN_Orange_red", "bg": "my:clrbox02", "attrs": []},
+    "battery_gradient": {"fg": "white_red", "bg": "my:clrbox02", "attrs": []},
     "battery:divider": "background:divider",
     "battery_full": {
       "fg": "my:battery_full_fg",
