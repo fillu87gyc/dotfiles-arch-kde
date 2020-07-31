@@ -139,27 +139,29 @@ let g:coc_status_warning_sign = '  '
 function! LightLineCocError()
   let error_sign = get(g:, 'coc_status_error_sign' )
   let info = get(b:, 'coc_diagnostic_info', {})
-  if empty(info)
+  " if empty(info)
+  if info["error"] == 0
     return ''
   endif
   let errmsgs = []
   if get(info, 'error', 0)
     call add(errmsgs, error_sign . info['error'])
   endif
-  return trim(join(errmsgs, ' ') . ' ' . get(g:, 'coc_status', ''))
+  " return trim(join(errmsgs, ' ') . ' ' . get(g:, 'coc_status', ''))
+  return trim(join(errmsgs, ' ') . ' ')
 endfunction
 
 function! LightLineCocWarn() abort
   let warning_sign = get(g:, 'coc_status_warning_sign')
   let info = get(b:, 'coc_diagnostic_info', {})
-  if empty(info)
+  if info["warning"] == 0
     return ''
   endif
   let warnmsgs = []
   if get(info, 'warning', 0)
     call add(warnmsgs, warning_sign . info['warning'])
   endif
-  return trim(join(warnmsgs, ' ') . ' ' . get(g:, 'coc_status', ''))
+  return trim(join(warnmsgs, ' ') . ' ')
 endfunction
 
 autocmd User CocDiagnosticChange call lightline#update()  

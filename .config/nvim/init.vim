@@ -20,9 +20,9 @@ noremap <Leader>r :source ~/.config/nvim/init.vim<CR>:noh<CR>:echo'reload!'<CR>
 "------
 " 最後まで飛ぶ
 nnoremap <Leader>l $
-nnoremap <Leader>h ^
+nnoremap <Leader>h 0
 vnoremap <Leader>l $
-vnoremap <Leader>h ^
+vnoremap <Leader>h 0
 
 " 折り返し行移動(表示されている行で移動できる)
 nnoremap j gj
@@ -44,7 +44,7 @@ noremap <C-y> <C-w>
 " 検索終わりのハイライトを消す
 " ESCキー2度押しでハイライトの切り替え
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
-nnoremap == ggvG=g;
+nnoremap == :Format<CR>
 nnoremap <Leader>= :%s/	/  /g
 
 :command! Q q!
@@ -59,8 +59,10 @@ nnoremap <leader><C-i> :tabnext<CR>
 
 augroup vimrcEx
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
-  \ exe "normal g`\"" | endif
+        \ exe "normal g`\"" | endif
 augroup END
 
 source /home/fill/src/dotfiles/.config/nvim/.vim/dein_config.vim
 source /home/fill/src/dotfiles/.config/nvim/.vim/SyntaxInfo.vim
+
+let g:ruby_host_porg = '/home/fill/.rbenv/versions/2.7.1/bin/neovim-ruby-host'
