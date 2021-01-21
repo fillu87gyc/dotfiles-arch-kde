@@ -143,6 +143,6 @@ hi rubycontrol guifg=#7597c6 guibg=NONE guisp=NONE gui=NONE ctermfg=110 ctermbg=
 hi rubyidentifier guifg=#c6b6fe guibg=NONE guisp=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
 hi condtional guifg=#8fffff guibg=NONE guisp=NONE gui=NONE ctermfg=123 ctermbg=NONE cterm=NONE
 "--------
-hi NormalFloat guifg=#eeeeee guibg=#000000 guisp=#000000 gui=NONE ctermfg=NONE ctermbg=0 cterm=NONE
+hi NormalFloat guifg=#eeeeee guibg=#000000 guisp=#000000 gui=NONE ctermfg=NONE ctermbg=008 cterm=NONE
 hi CocErrorSign ctermfg=255 ctermbg=198
 hi CocWarningSign ctermfg=0 ctermbg=172

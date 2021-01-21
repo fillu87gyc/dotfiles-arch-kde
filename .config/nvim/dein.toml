@@ -100,3 +100,8 @@ hook_add='source ~/src/dotfiles/.config/nvim/.vim/lightline.vim'
 
 [[plugins]]
 repo='dag/vim-fish'
+
+[[plugins]]
+repo='lervag/vimtex'
+hook_add = '''
+'''

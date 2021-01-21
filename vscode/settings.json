@@ -244,7 +244,6 @@
 	"vim.easymotion": true,
 	"vim.easymotionKeys": "qazwsxedcrfvtgbyhnujmikol",
 	"git.ignoreMissingGitWarning": true,
-	"workbench.iconTheme": "vscode-icons",
 	"editor.minimap.enabled": false,
 	"editor.quickSuggestions": {
 		"other": true,
@@ -253,9 +252,9 @@
 	},
 	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,
-	"editor.renderWhitespace": "all",
+	"editor.renderWhitespace": "selection",
 	"[ruby]": {
-		"editor.autoIndent": true,
+		"editor.autoIndent": "none",
 		"editor.tabSize": 2,
 		"editor.insertSpaces": true
 	},
@@ -270,11 +269,51 @@
 			"br_spaces": 2
 		}
 	},
-	"workbench.colorTheme": "Default High Contrast",
-	"editor.renderIndentGuides": false,
+	"workbench.colorTheme": "Monokai",
+	"editor.renderIndentGuides": true,
 	"editor.fontSize": 16,
 	"vsicons.dontShowNewVersionMessage": true,
 	"terminal.external.windowsExec": "",
-	"terminal.integrated.fontFamily": "'InconsolataGo Nerd Font'",
-	"editor.fontFamily": "'InconsolataGo Nerd Font'"
+	"java.semanticHighlighting.enabled": true,
+	"java.format.settings.url": "/home/fill/.vscode-oss/extensions/redhat.java/eclipse-formatter.xml",
+	"files.exclude": {
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true
+	},
+	"[css]": {
+		"editor.suggest.insertMode": "replace"
+	},
+	"java.home": "/usr/lib/jvm/java-11-openjdk",
+	"latex-workshop.latex.recipes": [
+		{
+			"name": "compile",
+			"tools": [
+				"ptex2pdf"
+			]
+		}
+	],
+	"latex-workshop.latex.tools": [
+		{
+			"name": "ptex2pdf",
+			"command": "bash",
+			"args": [
+				"%DIR%compile.sh"
+			]
+		}
+	],
+	"latex-workshop.latex.autoBuild.run": "onFileChange",
+	"latex-workshop.docker.enabled": true,
+	"latex-workshop.view.pdf.viewer": "tab",
+	"vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+	"vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.vim",
+	"[python]": {
+		"editor.tabSize": 4,
+		"editor.insertSpaces": true
+	},
+	"terminal.integrated.allowMnemonics": true,
+	"editor.wordWrap": "on",
+	"python.dataScience.sendSelectionToInteractiveWindow": true,
+	"python.pythonPath": "/usr/bin/python3"
 }

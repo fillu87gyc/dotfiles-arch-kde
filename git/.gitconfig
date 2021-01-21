@@ -33,6 +33,7 @@
   rereset = reset --hard HEAD@{1}
   delcm   = reset --soft HEAD^
   a       = add .
+  deladd  = git reset HEAD
 [push]
   default = simple
 
