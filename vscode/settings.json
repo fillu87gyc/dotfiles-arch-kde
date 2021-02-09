@@ -286,6 +286,8 @@
 		"editor.suggest.insertMode": "replace"
 	},
 	"java.home": "/usr/lib/jvm/java-11-openjdk",
+	"latex-workshop.view.pdf.viewer": "tab",
+	// "latex-workshop.latexindent.path": "/usr/bin/latexindent",
 	"latex-workshop.latex.recipes": [
 		{
 			"name": "compile",
@@ -299,15 +301,12 @@
 			"name": "ptex2pdf",
 			"command": "bash",
 			"args": [
-				"%DIR%compile.sh"
+				"%DIR%compile.sh",
 			]
 		}
 	],
 	"latex-workshop.latex.autoBuild.run": "onFileChange",
 	"latex-workshop.docker.enabled": true,
-	"latex-workshop.view.pdf.viewer": "tab",
-	"vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-	"vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.vim",
 	"[python]": {
 		"editor.tabSize": 4,
 		"editor.insertSpaces": true
@@ -315,5 +314,9 @@
 	"terminal.integrated.allowMnemonics": true,
 	"editor.wordWrap": "on",
 	"python.dataScience.sendSelectionToInteractiveWindow": true,
-	"python.pythonPath": "/usr/bin/python3"
+	"python.pythonPath": "/usr/bin/python3",
+	"terminal.integrated.fontFamily": "SauceCodePro Nerd Font",
+	"terminal.integrated.allowChords": false,
+	"docker.images.sortBy": "CreatedTime",
+	"git.enableSmartCommit": true
 }

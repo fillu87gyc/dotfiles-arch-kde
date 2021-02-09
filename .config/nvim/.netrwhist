@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/fill/src/github.com/Microsoft/vscode-remote-try-node/.vscode'
+let g:netrw_dirhist_4='/home/fill/src/github.com/fillu87gyc/software_3b/5'
 let g:netrw_dirhist_3='/home/fill/src/github.com/TUT-class-sato/SDM-report2/.github/workflows'
 let g:netrw_dirhist_2='/home/fill/src/github.com/TUT-class-sato/SDM-report2/.github'
 let g:netrw_dirhist_1='/home/fill/src/github.com/fillu87gyc/java_software_2b/5'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_9='/home/fill/src'
 let g:netrw_dirhist_8='/etc/NetworkManager/conf.d'
 let g:netrw_dirhist_7='/home/fill'
 let g:netrw_dirhist_6='/home/fill/Arduino'
-let g:netrw_dirhist_5='/home/fill/Arduino/master'
-let g:netrw_dirhist_4='/home/fill/src/github.com/fillu87gyc/java_software_2b/.git'

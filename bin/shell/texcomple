@@ -1,0 +1,5 @@
+#!/usr/sbin/zsh
+#
+docker run --rm -v $PWD:/workdir paperist/alpine-texlive-ja uplatex $1.tex > /dev/null &&
+docker run --rm -v $PWD:/workdir paperist/alpine-texlive-ja dvipdfmx $1.dvi && thunar $1.pdf
+
